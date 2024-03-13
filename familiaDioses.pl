@@ -14,23 +14,6 @@ esMujer(hipolita).
 esMujer(atena).
 esMujer(nera).
 
-%  padre madre e hijo(a)
-padre(cronos, ares).
-padre(cronos, hera).
-padre(ares, afrodita).
-padre(ares, hefesto).
-padre(poseidon, zeus). 
-padre(hefesto, baco).
-padre(hefesto, atena).
-padre(zeus, nera).
-
-madre(hera, afrodita).
-madre(hera, hefesto).
-madre(afrodita, zeus).
-madre(afrodita, baco).
-madre(afrodita, atena).
-madre(atena, hermes).
-madre(hipolita, nera).
 
 esDescendienteDirecto(hera, cronos).
 esDescendienteDirecto(afrodita, ares).
@@ -48,46 +31,23 @@ esDescendienteDirecto(nera, zeus).
 esDescendienteDirecto(hermes, atena).
 
 % regla de padre
-esPadre(Padre, Hijo) :- padre(Padre, Hijo),esHombre(Padre).
+esPadre(Padre, Hijo):- esDescendienteDirecto(Hijo,Padre),esHombre(Padre).
+
 
 % regla de madre
-esMadre(Madre, Hijo) :- madre(Madre, Hijo),esMujer(Madre).
+esMadre(Madre, Hijo):- esDescendienteDirecto(Hijo,Madre),esMujer(Madre).
+
 
 % si es hijo (a)
-esHijo(Hijo, Padre) :- esPadre(Padre, Hijo).
-esHija(Hija, Madre) :- esMadre(Madre, Hija).
-
+esHijo(Hijo, Padre) :- esHombre(Hijo), esDescendienteDirecto(Hijo,Padre).
+esHija(Hija, Padre) :- esMujer(Hijo), esDescendienteDirecto(Hijo,Padre).
 
 % si son hermanos
-esHermano(Hermano, Hermana) :- esHijo(Hermano, Padre),esHijo(Hermana, Padre),Hermano \= Hermana.
-esHermana(Hermana, Hermano) :- esHermano(Hermano, Hermana).
+esHermano(Hermano,Persona):- esDescendienteDirecto(Hermano,Padre), esHombre(Hermano),
+                               esDescendienteDirecto(Persona,Padre).
+
 
 % si es abuelo (a)
-esAbuelo(Abuelo, Nieto) :- esPadre(Abuelo, Hijo),esPadre(Hijo, Nieto).
-esAbuela(Abuela, Nieto) :- esMadre(Abuela, Hijo),esPadre(Hijo, Nieto).
+esAbuelo(Abuelo,Hijo) :- esDescendienteDirecto(Hijo, Padre), esDescendienteDirecto(Padre,Abuelo), esHombre(Abuelo).
+esAbuelo(Abuelo,Hijo) :- esDescendienteDirecto(Hijo, Padre), esDescendienteDirecto(Padre,Abuelo), esMujer(Abuela).
 
-%CONSULTAS EJEMPLO
-
-%ES_PADRE
-%?- esPadre(Hijo, zeus).
-
-%ES_MADRE
-%?- esMadre(Hijo, hefesto).
-
-%ES_HIJO
-%?- esHijo(Hijo, cronos).
-
-%ES_HIJA
-%?- esHija(Hija, hera).
-
-%ES_HERMANO
-%?- esHermano(Hermano, afrodita).
-
-%ES_HERMANA
-%?- esHermana(Hermana, hefesto).
-
-%ES_ABUELO
-?- esAbuelo(Abuelo, baco).
-
-%ES_ABUELA
-?- esAbuela(Abuela, atena).
