@@ -51,3 +51,8 @@ esHermano(Hermano,Persona):- esDescendienteDirecto(Hermano,Padre), esHombre(Herm
 esAbuelo(Abuelo,Hijo) :- esDescendienteDirecto(Hijo, Padre), esDescendienteDirecto(Padre,Abuelo), esHombre(Abuelo).
 esAbuelo(Abuelo,Hijo) :- esDescendienteDirecto(Hijo, Padre), esDescendienteDirecto(Padre,Abuelo), esMujer(Abuela).
 
+%si es ancestro (a)
+esAncestro(Ancestro, Descendiente) :- esDescendienteDirecto(Descendiente, Ancestro).
+esAncestro(Ancestro, Descendiente) :- esDescendienteDirecto(Descendiente, Padre), esAncestro(Ancestro, Padre).
+
+
