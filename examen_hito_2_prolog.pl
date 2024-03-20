@@ -1,140 +1,137 @@
 %EXAMEN HITO 2 - HERRERA GABRIEL
 
-%PRINCIPAL
-Tiene(tienda, producto).
-Tiene(tienda, clientes).
-
 %esProducto
-EsProducto(lg510).
-EsProducto(samsungb125).
-EsProducto(lg_batimix).
-EsProducto(samsungl200).
-EsProducto(bose).
-EsProducto(lg).
-EsProducto(xbox360).
-EsProducto(xbox_one).
-EsProducto(ps2).
-EsProducto(ps3).
-EsProducto(omen560).
-EsProducto(pavilian15a).
-EsProducto(destruinator500).
-%esCategoria 
+esProducto(lg510).
+esProducto(samsungb125).
+esProducto(lg_batimix).
+esProducto(samsungl200).
+esProducto(bose).
+esProducto(lg).
+esProducto(xbox360).
+esProducto(xbox_one).
+esProducto(ps2).
+esProducto(ps3).
+esProducto(omen560).
+esProducto(pavilian15a).
+esProducto(destruinator500).
+
 
 %CATEGORIAS PRINCIPALES
-EsDeLaCategoria(electrodomestico, producto).
-EsDeLaCategoria(entretenimiento, producto).
-EsDeLaCategoria(computadoras, producto).
-
-EsDeLaCategoria(batidora, electrodomestico).
-EsDeLaCategoria(lavadora, electrodomestico).
-
-EsDeLaCategoria(parlantes, entretenimiento).
-EsDeLaCategoria(consolas, entretenimiento).
-
-EsDeLaCategoria(laptop, computadoras).
-EsDeLaCategoria(escritorio, computadoras). 
-
-EsDeLaCategoria(xbox, consolas).
-EsDeLaCategoria(plays, consolas).
-
-EsDeLaCategoria(dell, laptop).
-EsDeLaCategoria(hp, laptop).
-
-EsDeLaCategoria(dell, escritorio).
-EsDeLaCategoria(hp, escritorio).
-EsDeLaCategoria(marca_patito, escritorio).
+esDeLaCategoria(electrodomestico, producto).
+esDeLaCategoria(entretenimiento, producto).
+esDeLaCategoria(computadoras, producto).
+esDeLaCategoria(batidora, electrodomestico).
+esDeLaCategoria(lavadora, electrodomestico).
+esDeLaCategoria(parlantes, entretenimiento).
+esDeLaCategoria(consolas, entretenimiento).
+esDeLaCategoria(laptop, computadoras).
+esDeLaCategoria(escritorio, computadoras). 
+esDeLaCategoria(xbox, consolas).
+esDeLaCategoria(plays, consolas).
+esDeLaCategoria(dell, laptop).
+esDeLaCategoria(hp, laptop).
+esDeLaCategoria(dell, escritorio).
+esDeLaCategoria(hp, escritorio).
+esDeLaCategoria(marca_patito, escritorio).
 
 %PRODUCTO
-EsUnProducto(lg510, batidora).
-EsUnProducto(samsungb125, batidora).
-EsUnProducto(lg_batimix, lavadora).
-EsUnProducto(samsungl200, lavadora).
+esUnProducto(lg510, batidora).
+esUnProducto(samsungb125, batidora).
+esUnProducto(lg_batimix, lavadora).
+esUnProducto(samsungl200, lavadora).
 
-EsUnProducto(bose, parlantes).
-EsUnProducto(lg, parlantes).
-% EsUnProducto(xbox, consolas). QUEDA
-% EsUnProducto(plays, consolas). UUEDA
-EsUnProducto(xbox360, xbox).
-EsUnProducto(xbox_one, xbox).
-EsUnProducto(ps2, plays).
-EsUnProducto(ps3, plays).
+esUnProducto(bose, parlantes).
+esUnProducto(lg, parlantes).
 
-% EsUnProducto(dell, laptop). QUEDA
-% EsUnProducto(hp, laptop). QUEDA
-EsUnProducto(omen560, dell).
-EsUnProducto(pavilian15a, hp).
-% EsUnProducto(dell, escritorio). q
-% EsUnProducto(hp, escritorio). q
-% EsUnProducto(marca_patito, escritorio). q
-EsUnProducto(omen560, dell).
-EsUnProducto(pavilian15a, hp).
-EsUnProducto(destruinator500, marca_patito).
+esUnProducto(xbox360, xbox).
+esUnProducto(xbox_one, xbox).
+esUnProducto(ps2, plays).
+esUnProducto(ps3, plays).
+
+
+esUnProducto(omen560, dell).
+esUnProducto(pavilian15a, hp).
+
+esUnProducto(omen560, dell).
+esUnProducto(pavilian15a, hp).
+esUnProducto(destruinator500, marca_patito).
 
 %HECHOS CLIENTE
-EsUnCliente(maria, cliente).
-EsUnCliente(juana, cliente).
-EsUnCliente(jeremias, cliente).
+esUnCliente(maria, cliente).
+esUnCliente(juana, cliente).
+esUnCliente(jeremias, cliente).
 
 %CARACTERISTICAS
-TieneCaracteristicas(lg510,blanco).
-TieneCaracteristicas(lg510,barato).
-TieneCaracteristicas(lg510,bueno).
+tieneCaracteristicas(lg510,blanco).
+tieneCaracteristicas(lg510,barato).
+tieneCaracteristicas(lg510,bueno).
 
-TieneCaracteristicas(samsungb125,negro).
-TieneCaracteristicas(samsungb125,caro).
-TieneCaracteristicas(samsungb125,malo).
+tieneCaracteristicas(samsungb125,negro).
+tieneCaracteristicas(samsungb125,caro).
+tieneCaracteristicas(samsungb125,malo).
 
-TieneCaracteristicas(lg_batimix,rojo).
-TieneCaracteristicas(lg_batimix,barato).
-TieneCaracteristicas(lg_batimix,malo).
+tieneCaracteristicas(lg_batimix,rojo).
+tieneCaracteristicas(lg_batimix,barato).
+tieneCaracteristicas(lg_batimix,malo).
 
-TieneCaracteristicas(samsungl200,negro).
-TieneCaracteristicas(samsungl200,caro).
-TieneCaracteristicas(samsungl200,bueno).
+tieneCaracteristicas(samsungl200,negro).
+tieneCaracteristicas(samsungl200,caro).
+tieneCaracteristicas(samsungl200,bueno).
 
-TieneCaracteristicas(bose,blanco).
-TieneCaracteristicas(bose,caro).
-TieneCaracteristicas(bose,negro).
+tieneCaracteristicas(bose,blanco).
+tieneCaracteristicas(bose,caro).
+tieneCaracteristicas(bose,negro).
 
-TieneCaracteristicas(lg,rojo).
-TieneCaracteristicas(lg,barato).
-TieneCaracteristicas(lg,malo).
+tieneCaracteristicas(lg,rojo).
+tieneCaracteristicas(lg,barato).
+tieneCaracteristicas(lg,malo).
 
-TieneCaracteristicas(xbox360,barato).
-TieneCaracteristicas(xbox360,verde).
-TieneCaracteristicas(xbox360,malo).
+tieneCaracteristicas(xbox360,barato).
+tieneCaracteristicas(xbox360,verde).
+tieneCaracteristicas(xbox360,malo).
 
-TieneCaracteristicas(xbox_one,caro).
-TieneCaracteristicas(xbox_one,verde).
-TieneCaracteristicas(xbox_one,bueno).
+tieneCaracteristicas(xbox_one,caro).
+tieneCaracteristicas(xbox_one,verde).
+tieneCaracteristicas(xbox_one,bueno).
 
-TieneCaracteristicas(ps2,negro).
-TieneCaracteristicas(ps2,barato).
-TieneCaracteristicas(ps2,bueno).
+tieneCaracteristicas(ps2,negro).
+tieneCaracteristicas(ps2,barato).
+tieneCaracteristicas(ps2,bueno).
 
-TieneCaracteristicas(ps3,negro).
-TieneCaracteristicas(ps3,barato).
-TieneCaracteristicas(ps3,bueno).
+tieneCaracteristicas(ps3,negro).
+tieneCaracteristicas(ps3,barato).
+tieneCaracteristicas(ps3,bueno).
 
-TieneCaracteristicas(omen560,plateado).
-TieneCaracteristicas(omen560,barato).
-TieneCaracteristicas(omen560,malo).
+tieneCaracteristicas(omen560,plateado).
+tieneCaracteristicas(omen560,barato).
+tieneCaracteristicas(omen560,malo).
 
-TieneCaracteristicas(pavilian15a,plateado).
-TieneCaracteristicas(pavilian15a,caro).
-TieneCaracteristicas(pavilian15a,bueno).
+tieneCaracteristicas(pavilian15a,plateado).
+tieneCaracteristicas(pavilian15a,caro).
+tieneCaracteristicas(pavilian15a,bueno).
 
-TieneCaracteristicas(destruinator500,plateado).
-TieneCaracteristicas(destruinator500,barato).
-TieneCaracteristicas(destruinator500,bueno).
+tieneCaracteristicas(destruinator500,plateado).
+tieneCaracteristicas(destruinator500,barato).
+tieneCaracteristicas(destruinator500,bueno).
 
 
 %REGLAS 
-% Regla para identificar los productos
-esProducto(Producto) :- EsProducto(Producto).
+producto(X) :-esUnProducto(X, _).  
 
-% Regla para identificar las categorías d
-esCategoria(Producto, Categoria) :- EsDeLaCategoria(Categoria, Producto).
+cliente(X) :- esUnCliente(X, _).
 
-% Regla para identificar los clientes
-esCliente(Cliente) :- EsUnCliente(Cliente, cliente).
+categoria(X) :- esDeLaCategoria(X, _).
+
+
+productos_negros(Producto) :- tieneCaracteristicas(Producto, negro).
+productos_blancos(Producto) :- tieneCaracteristicas(Producto, blanco).
+productos_rojos(Producto) :- tieneCaracteristicas(Producto, rojo).
+productos_verdes(Producto) :- tieneCaracteristicas(Producto, verde).
+productos_plateados(Producto) :- tieneCaracteristicas(Producto, plateado).
+
+
+productos_buenos(Producto) :- tieneCaracteristicas(Producto, bueno).
+productos_malos(Producto) :- tieneCaracteristicas(Producto, malo).
+productos_caros(Producto) :- tieneCaracteristicas(Producto, caro).
+productos_baratos(Producto) :- tieneCaracteristicas(Producto, barato).
+
