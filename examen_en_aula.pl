@@ -30,6 +30,5 @@ estaCategoria("Samsung L200",lavadora).
 estaCategoria("Bose",parlantes).
 estaCategoria("LG",parlantes).
 
-%REGLAS
-esProductoDentroDeCategoria(Producto, Categoria):- esProducto(Producto), esCategoria(Categoria), estaEnCategoria(Producto,Categoria).
-esProductoDentroDeCategoria(Producto, Categoria):- estaEnCategoria(Categoria2, Categoria),esProductoDentroDeCategoria(Producto, Categoria2).
+productoDentroCategoria(Producto, Categoria):- esCategoria(Categoria),esProducto(Producto), estaCategoria(Producto,Categoria).
+productoDentroCategoria(Producto, Categoria):- estaCategoria(Producto, Categoria),productoDentroCategoria(Producto,Categoria).
